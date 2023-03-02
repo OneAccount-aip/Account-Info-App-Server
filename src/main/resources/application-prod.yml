@@ -1,0 +1,17 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+logging:
+  level:
+    root: info
+    ads.client: debug
+    site.project.accountinfoapp: debug
+app:
+  oauth:
+    client_id: {CLIENT_ID}
+    client_secret: {CLIENT_SECRET}
+    scope: {SCOPE}
+    redirect_url: {REDIRECT_URL}
+  grant:
+    client_credentials: {CLIENT_CREDENTIALS}
+    authorization_code: {AUTHORIZATION_CODE}
