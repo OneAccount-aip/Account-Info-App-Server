@@ -1,5 +1,6 @@
 package site.project.accountinfoapp.userInfo.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,6 +19,7 @@ public class UserInfoController {
     private final UserInfoService userInfoService;
 
     @GetMapping("/me")
+    @Operation(description = "사용자 정보와 계좌 목록 조회")
     public ResponseEntity<?> retrieveUserInformation(
             @RequestHeader("Authorization") String token,
             @RequestParam("user_seq_no") String seqNo

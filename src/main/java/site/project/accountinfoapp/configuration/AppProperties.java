@@ -23,4 +23,11 @@ public record AppProperties() {
         String client_credentials;
         String authorization_code;
     }
+
+    @Data
+    @Component
+    @ConfigurationProperties(prefix = "app.tranid")
+    public static class TranId{
+        String header_string;
+    }
 }
