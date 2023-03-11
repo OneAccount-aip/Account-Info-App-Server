@@ -13,9 +13,14 @@ repositories {
 }
 
 dependencies {
-//    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+    implementation group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.7.0'
+    implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
 
     // openfeign
     implementation 'org.springframework.cloud:spring-cloud-starter-openfeign'
@@ -32,6 +37,20 @@ dependencies {
 
     // spring-doc
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.0'
+
+    // jwt
+    implementation group: 'com.auth0', name: 'java-jwt', version: '3.16.0'
+
+    // validator
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation', version: '2.5.6'
+
+    // security
+    testImplementation 'org.springframework.security:spring-security-test'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
+    // for StringUtils
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'org.apache.commons:commons-text:1.9'
 }
 
 tasks.named('test') {
