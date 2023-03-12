@@ -1,5 +1,6 @@
 package site.project.accountinfoapp.fintech.transfer.dto;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
@@ -7,6 +8,7 @@ import java.util.List;
 public record TransferRequestDto(
 ) {
     @Data
+    @Builder
     public static class WithDrawRequestDto{
             String bank_tran_id;
             Character cntr_account_type;
@@ -30,6 +32,7 @@ public record TransferRequestDto(
     }
 
     @Data
+    @Builder
     public static class DepositRequestDto{
             Character cntr_account_type;
             String cntr_account_num;
@@ -42,6 +45,7 @@ public record TransferRequestDto(
     }
 
     @Data
+    @Builder
     public static class Deposit_list{
             String tran_no;
             String bank_tran_id;
