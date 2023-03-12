@@ -11,16 +11,18 @@ spring:
 
   datasource:
     driver-class-name: ${DRIVER_CLASS_NAME}
-    url: ${DATASOURCE_URL}
+    url: jdbc:${DB}://${HOST}:${PORT}/${NAME}?timezone=UTC
     username: ${USERNAME}
     password: ${PASSWORD}
+    hikari:
+      maximum-pool-size: 20
 
   jpa:
     open-in-view: true
     show-sql: true
     hibernate:
       ddl-auto: ${DDL_AUTO}
-    database-platform: ${DATABASE-PLATFORM}
+    database-platform: org.hibernate.dialect.MariaDB103Dialect
     properties:
       hibernate:
         jdbc:
