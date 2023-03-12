@@ -10,46 +10,46 @@ spring:
     allow-bean-definition-overriding: true
 
   datasource:
-    driver-class-name: {DRIVER_CLASS_NAME}
-    url: {DATASOURCE_URL}
-    username: {USERNAME}
-    password: {PASSWORD}
+    driver-class-name: ${DRIVER_CLASS_NAME}
+    url: ${DATASOURCE_URL}
+    username: ${USERNAME}
+    password: ${PASSWORD}
 
   jpa:
     open-in-view: true
     show-sql: true
     hibernate:
-      ddl-auto: {DDL_AUTO}
-    database-platform: {DATABASE-PLATFORM}
+      ddl-auto: ${DDL_AUTO}
+    database-platform: ${DATABASE-PLATFORM}
     properties:
       hibernate:
         jdbc:
           time_zone: UTC
 app:
   oauth:
-    client_id: {CLIENT_ID}
-    client_secret: {CLIENT_SECRET}
-    scope: {SCOPE}
-    redirect_url: {REDIRECT_URL}
+    client_id: ${CLIENT_ID}
+    client_secret: ${CLIENT_SECRET}
+    scope: ${SCOPE}
+    redirect_url: ${REDIRECT_URL}
   grant:
-    client_credentials: {CLIENT_CREDENTIALS}
-    authorization_code: {AUTHORIZATION_CODE}
+    client_credentials: ${CLIENT_CREDENTIALS}
+    authorization_code: ${AUTHORIZATION_CODE}
   tranid:
-    header_string: {HEADER_STRING}
+    header_string: ${HEADER_STRING}
   account:
-    recv_client_name: {RECV_CLIENT_NAME}
-    recv_client_bank_code: {RECV_CLIENT_BANK_CODE}
-    recv_client_account_num: {RECV_CLIENT_ACCOUNT_NUM}
-    sub_frnc_name : {SUB_FRNC_NAME}
-    sub_frnc_num : {SUB_FRNC_NUM}
-    sub_frnc_business_num : {SUB_FRNC_BUSINESS_NUM}
+    recv_client_name: ${RECV_CLIENT_NAME}
+    recv_client_bank_code: ${RECV_CLIENT_BANK_CODE}
+    recv_client_account_num: ${RECV_CLIENT_ACCOUNT_NUM}
+    sub_frnc_name : ${SUB_FRNC_NAME}
+    sub_frnc_num : ${SUB_FRNC_NUM}
+    sub_frnc_business_num : ${SUB_FRNC_BUSINESS_NUM}
   cors:
-    test_origin: {ORIGIN}
-    production_origin: {ORIGIN}
+    test_origin: ${ORIGIN}
+    production_origin: ${ORIGIN}
   jwt:
-    SECRET: {SECRET}
-    EXPIRATION_TIME: {EXPIRATION_TIME}
-    TOKEN_PREFIX: {TOKEN_PREFIX}
-    HEADER_STRING: {HEADER_STRING}
+    SECRET: ${SECRET}
+    EXPIRATION_TIME: ${EXPIRATION_TIME}
+    TOKEN_PREFIX: ${TOKEN_PREFIX}
+    HEADER_STRING: ${HEADER_STRING}
   center:
-    account_num: {CNTR_ACCOUNT_NUM}
+    account_num: ${CNTR_ACCOUNT_NUM}
