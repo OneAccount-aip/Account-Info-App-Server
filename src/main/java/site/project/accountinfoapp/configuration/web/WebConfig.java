@@ -16,7 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins(cors.getTest_origin())
+                .allowedOrigins("https://web-account-info-app-client-6g2llf5d1j9b.sel3.cloudtype.app/")
                 .allowedHeaders("Authorization");
     }
 }
