@@ -16,7 +16,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("https://web-account-info-app-client-6g2llf5d1j9b.sel3.cloudtype.app/", "https://account-info-app-client.vercel.app/")
+                .allowedOrigins("https://web-account-info-app-client-6g2llf5d1j9b.sel3.cloudtype.app/", "https://account-info-app-client.vercel.app/", "http://localhost:3000/")
                 .allowedHeaders("Authorization");
     }
 }
