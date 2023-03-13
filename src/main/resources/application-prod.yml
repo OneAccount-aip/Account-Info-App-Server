@@ -37,7 +37,7 @@ app:
     client_credentials: ${CLIENT_CREDENTIALS}
     authorization_code: ${AUTHORIZATION_CODE}
   tranid:
-    header_string: ${HEADER_STRING}
+    header_string: ${TRAN_HEADER_STRING}
   account:
     recv_client_name: ${RECV_CLIENT_NAME}
     recv_client_bank_code: ${RECV_CLIENT_BANK_CODE}
@@ -52,6 +52,6 @@ app:
     SECRET: ${SECRET}
     EXPIRATION_TIME: ${EXPIRATION_TIME}
     TOKEN_PREFIX: ${TOKEN_PREFIX}
-    HEADER_STRING: ${HEADER_STRING}
+    HEADER_STRING: ${JWT_HEADER_STRING}
   center:
     account_num: ${CNTR_ACCOUNT_NUM}
