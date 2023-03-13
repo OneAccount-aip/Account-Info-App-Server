@@ -25,6 +25,7 @@ public class SecurityConfig {
     private final UserRepository userRepository;
     private final JwtAccessDeniedHandler handler;
     private final JwtAuthenticationEntryPoint entryPoint;
+    private final WebConfig webConfig;
     private final Jwt jwt;
 
     @Bean
@@ -40,7 +41,7 @@ public class SecurityConfig {
                 .formLogin().disable()
                 .httpBasic().disable()
 
-                .apply(new MyCustomDsl())
+                .apply(new MyCustomDsl(webConfig))
                 .and()
 
                 .exceptionHandling()
@@ -55,11 +56,16 @@ public class SecurityConfig {
         return http.build();
     }
 
+    @RequiredArgsConstructor
     public class MyCustomDsl extends AbstractHttpConfigurer<MyCustomDsl, HttpSecurity> {
+
+        private final WebConfig webConfig;
+
         @Override
         public void configure(HttpSecurity http) throws Exception {
             AuthenticationManager authenticationManager = http.getSharedObject(AuthenticationManager.class);
             http
+                    .addFilter(webConfig.corsFilter())
                     .addFilter(new JwtAuthenticationFilter(authenticationManager, jwt))
                     .addFilter(new JwtAuthorizationFilter(authenticationManager, userRepository, jwt));
         }
