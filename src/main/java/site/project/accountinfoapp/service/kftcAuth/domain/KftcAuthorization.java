@@ -1,8 +1,6 @@
 package site.project.accountinfoapp.service.kftcAuth.domain;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +11,9 @@ import org.hibernate.validator.constraints.Length;
 @Setter
 @Entity
 @NoArgsConstructor
+@Table(name = "kftcAuthorization", indexes = {
+        @Index(name = "index_username", columnList = "username")
+})
 public class KftcAuthorization {
 
     @Column @Id
