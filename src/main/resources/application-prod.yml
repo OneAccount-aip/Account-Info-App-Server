@@ -32,7 +32,7 @@ app:
     client_id: ${CLIENT_ID}
     client_secret: ${CLIENT_SECRET}
     scope: ${SCOPE}
-    redirect_url: ${REDIRECT_URL}
+    redirect_uri: ${REDIRECT_URL}
   grant:
     client_credentials: ${CLIENT_CREDENTIALS}
     authorization_code: ${AUTHORIZATION_CODE}
