@@ -12,6 +12,8 @@ public record AuthApiResponseDto(
         Float expires_in;
         String scope;
         String user_seq_no;
+        String rsp_code;
+        String rsp_message;
     }
 
     @Data
@@ -21,5 +23,7 @@ public record AuthApiResponseDto(
         Float expires_in;
         String scope;
         String client_use_code;
+        String rsp_code;
+        String rsp_message;
     }
 }
