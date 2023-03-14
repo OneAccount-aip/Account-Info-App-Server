@@ -6,11 +6,11 @@ import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import site.project.accountinfoapp.fintech.oauth.dto.AuthApiRequestDto;
-import site.project.accountinfoapp.fintech.oauth.dto.AuthApiResponseDto;
+import site.project.accountinfoapp.fintech.oauth.dto.AuthApiResponseDto.Token2LeggedResponseDto;
+import site.project.accountinfoapp.fintech.oauth.dto.AuthApiResponseDto.Token3LeggedResponseDto;
 
-import static site.project.accountinfoapp.fintech.oauth.dto.AuthApiRequestDto.*;
-import static site.project.accountinfoapp.fintech.oauth.dto.AuthApiResponseDto.*;
+import static site.project.accountinfoapp.fintech.oauth.dto.AuthApiRequestDto.Token2LeggedRequestDto;
+import static site.project.accountinfoapp.fintech.oauth.dto.AuthApiRequestDto.Token3LeggedRequestDto;
 
 @FeignClient(name = "Oauth", url = "https://testapi.openbanking.or.kr")
 public interface OauthOpenFeign{
