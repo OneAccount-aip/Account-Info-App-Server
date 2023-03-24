@@ -28,6 +28,15 @@ public class TransactionController {
             ){
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .body(transactionService.transfer(dto));
+                .body(transactionService.transferToUser(dto));
+    }
+
+    @PostMapping("/transaction/withdraw")
+    public ResponseEntity<?> withDraw(
+            @RequestBody TransferRequestDto dto
+    ){
+        return ResponseEntity
+                .status(HttpStatus.OK)
+                .body(transactionService.withdrawToService(dto));
     }
 }

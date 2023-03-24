@@ -5,5 +5,6 @@ import site.project.accountinfoapp.service.transactionHistory.dto.TransactionReq
 public interface TransactionService {
 
     Object getHistory(String finNum);
-    Object transfer(TransferRequestDto dto);
+    Object transferToUser(TransferRequestDto dto);
+    Object withdrawToService(TransferRequestDto dto);
 }

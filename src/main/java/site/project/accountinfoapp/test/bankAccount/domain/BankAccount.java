@@ -3,6 +3,8 @@ package site.project.accountinfoapp.test.bankAccount.domain;
 import jakarta.persistence.*;
 import lombok.Getter;
 
+import java.math.BigDecimal;
+
 @Entity
 @Getter
 public class BankAccount {
@@ -19,4 +21,7 @@ public class BankAccount {
 
     @Column
     private String username;
+
+    @Column
+    private BigDecimal balance;
 }
