@@ -25,6 +25,8 @@ public class Transaction {
 
     private String tranAmt;
 
+    private String afterAmt;
+
     @Column(name = "tran_date")
     private String tranDate;
 
