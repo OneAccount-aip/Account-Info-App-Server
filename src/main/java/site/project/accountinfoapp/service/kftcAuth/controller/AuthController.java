@@ -15,11 +15,6 @@ public class AuthController {
 
     private final AuthService authService;
 
-    @GetMapping("/token")
-    public ResponseEntity<?> allToken(){
-        return ResponseEntity.ok(authService.findAll());
-    }
-
     @PostMapping("/token")
     @Operation(summary = "Kftc 이용 토큰 등록")
     public ResponseEntity<?> registerToken(@RequestBody UserTokenRequestDto tokens){
