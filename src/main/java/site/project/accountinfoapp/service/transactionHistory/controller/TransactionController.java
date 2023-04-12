@@ -1,5 +1,6 @@
 package site.project.accountinfoapp.service.transactionHistory.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ public class TransactionController {
     private final TransactionService transactionService;
 
     @GetMapping("/transaction/user")
+    @Operation(summary = "해당 유저의 거래내역 조회")
     public ResponseEntity<?> getTransHistory(
             @RequestParam(value = "num") String finNum){
 
@@ -23,6 +25,7 @@ public class TransactionController {
     }
 
     @PostMapping("/transaction/transfer")
+    @Operation(summary = "송금이체 처리, 출금 후 입금이체")
     public ResponseEntity<?> transfer(
             @RequestBody TransferRequestDto dto
             ){
@@ -32,6 +35,7 @@ public class TransactionController {
     }
 
     @PostMapping("/transaction/withdraw")
+    @Operation(summary = "입금이체")
     public ResponseEntity<?> withDraw(
             @RequestBody TransferRequestDto dto
     ){
