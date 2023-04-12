@@ -4,14 +4,23 @@ logging:
     ads.client: debug
     com.client.external: debug
     site.project.accountinfoapp: debug
-
+server:
+  http2:
+    enabled: true
 spring:
   main:
     allow-bean-definition-overriding: true
+  http:
+    encoding:
+      force-response: true
+      force-request: true
+  resources:
+    static-locations: classpath:/META-INF/resources/,classpath:/resources/,classpath:/static/,classpath:/public/,classpath:/static/js/
 
   datasource:
     driver-class-name: ${DRIVER_CLASS_NAME}
     url: jdbc:${DB}://${HOST}:${PORT}/${NAME}?timezone=UTC
+
     username: ${USERNAME}
     password: ${PASSWORD}
     hikari:
@@ -42,9 +51,9 @@ app:
     recv_client_name: ${RECV_CLIENT_NAME}
     recv_client_bank_code: ${RECV_CLIENT_BANK_CODE}
     recv_client_account_num: ${RECV_CLIENT_ACCOUNT_NUM}
-    sub_frnc_name : ${SUB_FRNC_NAME}
-    sub_frnc_num : ${SUB_FRNC_NUM}
-    sub_frnc_business_num : ${SUB_FRNC_BUSINESS_NUM}
+    sub_frnc_name: ${SUB_FRNC_NAME}
+    sub_frnc_num: ${SUB_FRNC_NUM}
+    sub_frnc_business_num: ${SUB_FRNC_BUSINESS_NUM}
   cors:
     test_origin: ${ORIGIN}
     production_origin: ${ORIGIN}
