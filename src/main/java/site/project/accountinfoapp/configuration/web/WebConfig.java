@@ -21,7 +21,6 @@ public class WebConfig{
         CorsConfiguration config = new CorsConfiguration();
         config.setAllowCredentials(true);
         config.addAllowedOrigin("https://web-account-info-app-client-6g2llf5d1j9b.sel3.cloudtype.app/");
-        config.addAllowedOrigin("http://localhost:3000/");
         config.addAllowedHeader("*");
         config.addAllowedMethod("*");
         config.addExposedHeader("Authorization");
