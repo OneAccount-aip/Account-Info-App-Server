@@ -6,8 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import site.project.accountinfoapp.service.transactionHistory.domain.Transaction;
 import site.project.accountinfoapp.service.transactionHistory.dto.TransactionRequestDto.TransferRequestDto;
-import site.project.accountinfoapp.service.transactionHistory.dto.TransactionResponseDto;
-import site.project.accountinfoapp.service.transactionHistory.dto.TransactionResponseDto.TransferResponseDto;
 import site.project.accountinfoapp.service.transactionHistory.repository.TransactionRepository;
 import site.project.accountinfoapp.test.bankAccount.repository.BankAccountRepository;
 
