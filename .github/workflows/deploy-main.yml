@@ -1,0 +1,93 @@
+name: Deploy to cloudtype
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Connect deploy key
+        uses: cloudtype-github-actions/connect@v1
+        with:
+          token: ${{ secrets.CLOUDTYPE_TOKEN }}
+          ghtoken: ${{ secrets.GHP_TOKEN }}
+      - name: Deploy
+        uses: cloudtype-github-actions/deploy@v1
+        with:
+          token: ${{ secrets.CLOUDTYPE_TOKEN }}
+          project: sungwon-097/account-info-app
+          stage: main
+          yaml: >
+            name: account-info-app-server
+
+            app: java@17
+
+            options:
+              ports: 8080
+              env:
+                - name: SPRING_PROFILES_ACTIVE
+                  value: prod
+                - name: DRIVER_CLASS_NAME
+                  value: org.mariadb.jdbc.Driver
+                - name: DB
+                  value: mariadb
+                - name: HOST
+                  value: svc.sel3.cloudtype.app
+                - name: PORT
+                  value: "31257"
+                - name: NAME
+                  value: aip
+                - name: USERNAME
+                  value: root
+                - name: PASSWORD
+                  value: q1w2e3r4
+                - name: DDL_AUTO
+                  value: update
+                - name: DATABASE-PLATFORM
+                  value: org.hibernate.dialect.MariaDBDialect
+                - name: CLIENT_ID
+                  value: 2d720bca-aaea-46b6-9943-274bb39a5f8a
+                - name: CLIENT_SECRET
+                  value: 46250b94-a36d-467f-ba4f-f1c757165c22
+                - name: SCOPE
+                  value: oob
+                - name: REDIRECT_URL
+                  value: https://web-account-info-app-client-6g2llf5d1j9b.sel3.cloudtype.app
+                - name: CLIENT_CREDENTIALS
+                  value: client_credentials
+                - name: AUTHORIZATION_CODE
+                  value: authorization_code
+                - name: TRAN_HEADER_STRING
+                  value: M202300139U
+                - name: RECV_CLIENT_NAME
+                  value: 이용기관
+                - name: RECV_CLIENT_BANK_CODE
+                  value: "097"
+                - name: RECV_CLIENT_ACCOUNT_NUM
+                  value: "232000067812"
+                - name: SUB_FRNC_NAME
+                  value: 하위가맹점
+                - name: SUB_FRNC_NUM
+                  value: "097"
+                - name: SUB_FRNC_BUSINESS_NUM
+                  value: "0123456789"
+                - name: ORIGIN
+                  value: https://web-account-info-app-client-6g2llf5d1j9b.sel3.cloudtype.app/
+                - name: SECRET
+                  value: AIPKJBWFB98798KHKFW97
+                - name: EXPIRATION_TIME
+                  value: "864000000"
+                - name: TOKEN_PREFIX
+                  value: Bearer
+                - name: JWT_HEADER_STRING
+                  value: Authorization
+                - name: CNTR_ACCOUNT_NUM
+                  value: "973649318747"
+            context:
+              git:
+                url: git@github.com:${{ github.repository }}.git
+                ref: ${{ github.ref }}
+              preset: java-springboot
